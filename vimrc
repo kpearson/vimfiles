@@ -61,3 +61,5 @@
   vnoremap . :norm.<CR>;                " in visual mode, "." will for each line, go into normal mode and execute the "."
   cmap %/ <C-R>=expand("%:p:h")."/"<CR>
   cmap %% <C-R>=expand("%")<CR>
+
+" vim:ft=vim
