@@ -1,7 +1,7 @@
 # Kit's Vim files
 
-Install [MacVim] via [Homebrew] Cask.  
-MacVim requires the full xCode (Command Line Tools is not enough, _sigh_).  
+Install [MacVim] via [Homebrew Cask].
+MacVim requires the full xCode (Command Line Tools is not enough, _sigh_).
 The MacVim binary is essential for [Vundle] and [YouCompleteMe] plugin.
 
 These dotfiles use [Vundle] to manage Vim plugins.
@@ -11,10 +11,15 @@ brought in with my [dotfiles](www.github.com/kpearson/dotfiles) install script,
 this is already taken care of.
 
 The vimrc file is split up across multiple files in two directories, `rcfiles`
-and `rcplugins`. The file are organized by topic and contain specific
-binding and setting. See the vim directory [README](/vim/README.md).
+and `rcplugins`. The file are organized by topic and contain plugin specific
+bindings and settings. This way it is easy to know what bindings and settings
+are related to a given plugin.
 
-## Get Vundle up and running.
+Caveat: This vim setup (lightline plugin) expects the
+"PowerlineSymbols-Powerline" font to be available. Download [PowerlineSymbols]
+and install into OSX Font Book.
+
+## [Vundle]
 
 Run:
 
@@ -28,19 +33,29 @@ Launch Vim and run:
 :PluginInstall
 ```
 
-## Get YouCompleteMe up and running.
+## [YouCompleteMe]
 
-Confirm Cmake was installed via Homebrew.
+Confirm Cmake was installed via Homebrew with:
 
 ```
 which cmake
 ```
 
-Should return `/usr/local/bin/cmake`
+Should return `/usr/local/bin/cmake`. If not run `brew install cmake`.
 
 Then run:
 
 ```
-cd ~/.vim/bundle/YouCompleteMe
-./install.py --clang-completer
+~/.vim/bundle/YouCompleteMe/install.py --clang-completer
 ```
+
+As referenced in the [YouCompleteMe docs].
+
+[Homebrew]: http://brew.sh/
+[Homebrew Cask]: https://github.com/caskroom/homebrew-cask
+[MacVim]: https://github.com/b4winckler/macvim
+[Vundle]: https://github.com/VundleVim/Vundle.vim
+[YouCompleteMe]: https://github.com/Valloric/YouCompleteMe
+[YouCompleteMe docs]: https://github.com/Valloric/YouCompleteMe#mac-os-x-installation
+[PowerlineSymbols]: https://github.com/powerline/powerline/blob/develop/font/PowerlineSymbols.otf?raw=true
+
