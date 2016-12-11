@@ -1,0 +1,5 @@
+" vim-autoclose - Enable an auto-close chars
+
+Plugin 'townk/vim-autoclose'
+
+" vim:ft=vim
