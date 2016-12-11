@@ -1,0 +1,6 @@
+" vim-javascript - This bundle provides syntax highlighting and improved indentation.
+
+Plugin 'pangloss/vim-javascript'
+
+" vim:ft=vim
+

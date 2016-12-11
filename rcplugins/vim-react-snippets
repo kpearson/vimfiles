@@ -1,0 +1,5 @@
+" vim-react-snippets - A set of snippets for Vim to work with Facebook's React library.
+
+Plugin 'justinj/vim-react-snippets'
+
+" vim:ft=vim
