@@ -1,6 +1,8 @@
-" Surround - Add, update, remove enclosing marks, ie [], {}. (), "", ''
+" ----------------------------------------------
+" Surround - Add, update, remove enclosing marks
+" ----------------------------------------------
 
-Plugin 'tpope/vim-surround'
+Plug 'tpope/vim-surround'
 
 let [s:single_quote, s:double_quote, s:no_match] = [1,2,0]
 function! SurroundRequote()
@@ -50,5 +52,11 @@ nmap <leader>c' :call SurroundRequote()<cr>
 
 nmap <leader>qw ysiw"
 nmap <leader>QW ysiW"
+
+" -----------------------------------------------------------------------
+" Repeat.vim - Enable repeating of supported plugin maps, ie surround.vim
+" -----------------------------------------------------------------------
+
+Plug 'tpope/vim-repeat'
 
 " vim:ft=vim

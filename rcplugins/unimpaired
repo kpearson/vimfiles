@@ -1,5 +1,7 @@
-" Unimpaired - Pairs of mappings thanks to tpope
+" ------------------------------
+" Unimpaired - Pairs of mappings
+" ------------------------------
 
-Plugin 'tpope/vim-unimpaired'
+" Plugin 'tpope/vim-unimpaired'
 
 " vim:ft=vim

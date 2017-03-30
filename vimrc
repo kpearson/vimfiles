@@ -10,7 +10,7 @@
 "
 " I am using Vundle to manage my plugins, which is configured below
 " Each plugin is configured in its own file in ~/.vim/rcplugins
-"-------------------------------------------------------------------------------
+" ------------------------------------------------------------------------------
 
 " Set this before any others
   let mapleader = "\<Space>"
@@ -26,32 +26,47 @@
 
 " Setup Vundle to manage my bundles
 "----------------------------------
-  filetype off " required!
-  set rtp+=~/.vim/bundle/Vundle.vim/
-  call vundle#rc("~/.vim/bundle/")
+  " filetype off " required!
+  " set rtp+=~/.vim/bundle/Vundle.vim/
+  " call vundle#rc("~/.vim/bundle/")
 
-" Plugins are each listed in their own file. Loop and source ftw
-"----------------------------------------------------------------
+" ===================== Plug Initialization ====================
+
+" Plugins are each listed in their own file. Loop and source
+  call plug#begin('~/.vim/plugged')
   call s:SourceConfigFilesIn('rcplugins')
+  call plug#end()
 
-  filetype plugin indent on " required!
+"-----------------------------------------------------------
+  colorscheme jellybeans
+
+  filetype plugin indent on
   syntax on
 
-" Vimrc is split accross multiple files, so loop over and source each
+" Vimrc is split across multiple files, so loop over and source each
 "---------------------------------------------------------------------
   call s:SourceConfigFilesIn('rcfiles')
 
 " ============ Key Mapping ============
-  nnoremap <Leader>w :w<CR>   " Leader w to write
-  set timeoutlen=200
+"
+" Leader w to write
+  nnoremap <Leader>w :w<CR>
 
-  set clipboard=unnamed  " Set Clipboard to Mirror the Default Regester
-  set showcmd  " Show the current command context in the lower right
+  set timeoutlen=500
+
+" Set Clipboard to Mirror the Default Register
+  set clipboard=unnamed
+
+" Show the current command context in the lower right
+  set showcmd
+
   set makeef=~/##
 
+" Use leader-z to activate spell checker
   nmap <Leader>z :set spell!<CR>
 
 " ============== Markdown ==============
+
   autocmd BufNewFile,BufReadPost *.md set filetype=markdown
   let g:vim_markdown_frontmatter=1  " Frontmatter highlighting
   let g:vim_markdown_folding_disabled=1

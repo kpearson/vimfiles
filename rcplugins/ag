@@ -1,6 +1,8 @@
-" Ag - The silver searcher.
+" -----------------------
+" Ag - Fast global search
+" -----------------------
 
-Plugin 'rking/ag.vim'
+Plug 'rking/ag.vim'
 
 map <Leader>/ :Ag<SPACE>
 

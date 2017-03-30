@@ -1,6 +1,8 @@
-" Trailing-Whitespace - Provides a list of buffers for organization
+" -------------------
+" Trailing-Whitespace
+" -------------------
 
-Plugin 'bronson/vim-trailing-whitespace'
+Plug 'bronson/vim-trailing-whitespace'
 
 nmap <LEADER>wht :FixWhitespace<CR>
 

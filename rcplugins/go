@@ -1,5 +1,7 @@
-" vim-go - Go lang syntax.
+" -----------------------
+" vim-go - Go lang syntax
+" -----------------------
 
-Plugin 'fatih/vim-go'
+" Plug 'fatih/vim-go'
 
 " vim:ft=vim

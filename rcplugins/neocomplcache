@@ -1,6 +1,8 @@
-" " Neocomplcache provides keyword completion system.
+" ------------------------------------------------
+" Neocomplcache provides keyword completion system
+" ------------------------------------------------
 "
-" Plugin 'Shougo/neocomplcache.vim'
+" Plug 'Shougo/neocomplcache.vim'
 "
 " " Stuff to ignore when tab completing
 "   set wildmode=list:longest
