@@ -1,7 +1,0 @@
-" -------------------------------------------------------------------
-" vim-javascript - Syntax highlighting and indentation for Javascript
-" -------------------------------------------------------------------
-
-Plug 'pangloss/vim-javascript'
-
-" vim:ft=vim

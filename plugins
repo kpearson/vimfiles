@@ -1,0 +1,103 @@
+" Ag - Fast global search
+Plug 'rking/ag.vim'
+
+" Show Git diff in gutter of file
+Plug 'airblade/vim-gitgutter'
+
+" Bundler - wrapper around bundler
+Plug 'tpope/vim-bundler'
+
+" Colorschemes - one stop shop for vim colorschemes
+Plug 'flazz/vim-colorschemes'
+
+" Fuzzy searcher
+Plug 'kien/ctrlp.vim'
+
+" Dash - Vim intergration for dash
+Plug 'rizzatti/dash.vim'
+
+" Fugitive - Interact with git via Vim
+Plug 'tpope/vim-fugitive'
+
+" Lighline - A light and configurable statusline/tabline
+Plug 'itchyny/lightline.vim'
+
+" Asynchronously runs programs using Neovim's or Vim's job-control functionality
+Plug 'neomake/neomake'
+
+" NerdTree - Filesystem explorer
+Plug 'scrooloose/nerdtree'
+
+" Ruby - Configuration for editing and compiling Ruby
+Plug 'vim-ruby/vim-ruby'
+
+" Rails.vim - Help for working with Rails projects in vim
+Plug 'tpope/vim-rails'
+
+" vim-rake - Help for working with Rake projects in vim
+Plug 'tpope/vim-rake'
+
+" RSpec - Rspec runner for Vim and MacVim.
+Plug 'thoughtbot/vim-rspec'
+
+" vim-rbenv - Tab complete for the :Rbenv command
+Plug 'tpope/vim-rbenv'
+
+" Seeing is Believing
+Plug 'hwartig/vim-seeing-is-believing'
+
+" Slueth.vim - Adjusts 'shiftwidth' and 'expandtab' based on the current file.
+Plug 'tpope/vim-sleuth'
+
+" tcomment - file-type sensible comments
+Plug 'tomtom/tcomment_vim'
+
+" Trailing-Whitespace
+Plug 'bronson/vim-trailing-whitespace'
+
+" UltiSnips - Tap completion snippets.
+Plug 'SirVer/ultisnips'
+  " vim-snippets - Snippet package.
+  Plug 'honza/vim-snippets'
+  " vim-react-snippets - Snippets for React.
+  Plug 'justinj/vim-react-snippets'
+
+" vim-javascript - Syntax highlighting and indentation for Javascript
+Plug 'pangloss/vim-javascript'
+
+" vim-jsx - Syntax highlighting and indenting for JSX
+Plug 'mxw/vim-jsx'
+
+" YouCompleteMe - Intelligent completion with fuzzy matching
+Plug 'Valloric/YouCompleteMe'
+
+" VTR - Vim tmux integration
+" Plug 'christoomey/vim-tmux-navigator'
+
+" VTR - Vim tmux integration
+" Plug 'christoomey/vim-tmux-runner'
+
+" Surround - Add, update, remove enclosing marks
+" Plug 'tpope/vim-surround'
+  " Repeat.vim - Enable repeating of supported plugin maps, ie surround.vim
+  " Plug 'tpope/vim-repeat'
+
+" Tabular - lines up text.
+" Plug 'godlygeek/tabular'  " Required for 'vim-markdown'.
+
+" Syntastic - Syntax checking on the fly
+" Plug 'scrooloose/syntastic'
+
+" vim-liquid - Liquid syntax and Jekyll enhancements
+" Plug 'tpope/vim-liquid'
+
+" Vim-Livedown - Markdown previewer. Plugin for Livedown
+" Plug 'shime/vim-livedown'
+
+" vim-go - Go lang syntax
+" Plug 'fatih/vim-go'
+
+" vim-autoclose - Enable an auto-close
+" Plug 'townk/vim-autoclose'
+
+" vim:ft=vim

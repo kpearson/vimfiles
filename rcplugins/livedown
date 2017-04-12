@@ -1,7 +1,0 @@
-" ------------------------------------------------------
-" Vim-Livedown - Markdown previewer. Plugin for Livedown
-" ------------------------------------------------------
-
-" Plug 'shime/vim-livedown'
-
-" vim:ft=vim

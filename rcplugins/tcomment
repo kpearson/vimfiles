@@ -1,7 +1,0 @@
-" --------------------------------------
-" tcomment - file-type sensible comments
-" --------------------------------------
-
-Plug 'tomtom/tcomment_vim'
-
-" vim:ft=vim

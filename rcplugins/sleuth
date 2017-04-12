@@ -1,8 +1,0 @@
-" ------------------------------------------------------------------------------
-" Slueth.vim - Automatically adjusts 'shiftwidth' and 'expandtab' heuristically
-"              based on the current file.
-" ------------------------------------------------------------------------------ 
-
-Plug 'tpope/vim-sleuth'
-
-" vim:ft=vim

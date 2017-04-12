@@ -1,6 +1,6 @@
-"===============================================================================
+" ==============================================================================
 "                                ~My vimrc~
-"===============================================================================
+" ==============================================================================
 " Author:        Kit Pearson [http://trialanderror.io]
 " Source:        https://github.com/kpearson/dotfiles
 "
@@ -24,34 +24,26 @@
     endfor
   endfunction
 
-" Setup Vundle to manage my bundles
-"----------------------------------
-  " filetype off " required!
-  " set rtp+=~/.vim/bundle/Vundle.vim/
-  " call vundle#rc("~/.vim/bundle/")
+" ========== Plugin Initialization ============
 
-" ===================== Plug Initialization ====================
+call plug#begin('~/.vim/plugged')
+source ~/.vim/plugins
+call plug#end()
 
-" Plugins are each listed in their own file. Loop and source
-  call plug#begin('~/.vim/plugged')
-  call s:SourceConfigFilesIn('rcplugins')
-  call plug#end()
+filetype plugin indent on
+syntax on
+colorscheme jellybeans
 
-"-----------------------------------------------------------
-  colorscheme jellybeans
+" Load settings
+call s:SourceConfigFilesIn('rcfiles')
+call s:SourceConfigFilesIn('pluginSettings')
 
-  filetype plugin indent on
-  syntax on
+" ============ Mappings ============
 
-" Vimrc is split across multiple files, so loop over and source each
-"---------------------------------------------------------------------
-  call s:SourceConfigFilesIn('rcfiles')
-
-" ============ Key Mapping ============
-"
 " Leader w to write
   nnoremap <Leader>w :w<CR>
 
+" Time between key strokes for combination commands
   set timeoutlen=500
 
 " Set Clipboard to Mirror the Default Register
@@ -73,7 +65,8 @@
 
 " ========== General Settings ==========
 
-  vnoremap . :norm.<CR>;                " in visual mode, "." will for each line, go into normal mode and execute the "."
+" in visual mode, '.' will for each line, go into normal mode and execute the '.'
+  vnoremap . :norm.<CR>;
   cmap %/ <C-R>=expand("%:p:h")."/"<CR>
   cmap %% <C-R>=expand("%")<CR>
 

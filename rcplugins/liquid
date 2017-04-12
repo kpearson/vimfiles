@@ -1,7 +1,0 @@
-" --------------------------------------------------
-" vim-liquid - Liquid syntax and Jekyll enhancements
-" --------------------------------------------------
-
-" Plug 'tpope/vim-liquid'
-
-" vim:ft=vim

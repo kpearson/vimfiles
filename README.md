@@ -1,36 +1,64 @@
 # Kit's Vim files
 
-Install [MacVim] via [Homebrew Cask].
-MacVim requires the full xCode (Command Line Tools is not enough, _sigh_).
-The MacVim binary is essential for [Vundle] and [YouCompleteMe] plugin.
+## Macvim
 
-These dotfiles use [Vundle] to manage Vim plugins.
+Install [MacVim] via [Homebrew Cask].
+:heavy_exclamation_mark: MacVim requires the full xCode (Command Line Tools is
+not enough, _sigh_). Also, the MacVim binary is essential for the
+[YouCompleteMe] plugin.
 
 Symlink `vimrc` to the root directory as `.vimrc`. If these vimfiles were
 brought in with my [dotfiles](www.github.com/kpearson/dotfiles) install script,
 this is already taken care of.
+
+## Neovim
+
+* Install [Neovim] via [Homebrew] `brew install neovim/neovim/neovim`.
+* Symlink the `vimrc` and `.vim` directory to the new Neovim locations.
+    As mentioned in `:help nvim-from-vim`, run:
+    ```shell
+    mkdir -p ${XDG_CONFIG_HOME:=$HOME/.config}
+    ln -s ~/.vim $XDG_CONFIG_HOME/nvim
+    ln -s ~/.vimrc $XDG_CONFIG_HOME/nvim/init.vim
+    ```
+
+## Vimrc
 
 The vimrc file is split up across multiple files in two directories, `rcfiles`
 and `rcplugins`. The file are organized by topic and contain plugin specific
 bindings and settings. This way it is easy to know what bindings and settings
 are related to a given plugin.
 
-Caveat: This vim setup (lightline plugin) expects the
+:large_orange_diamond: Caveat: This vim setup (lightline plugin) expects the
 "PowerlineSymbols-Powerline" font to be available. Download [PowerlineSymbols]
 and install into OSX Font Book.
 
-## [Vundle]
+## Plugins
 
-Run:
+[Vim-plug] is used to manage plugins.
 
+### Installation
+
+#### Unix
+
+```shell
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ```
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
+#### Neovim
+
+```shell
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ```
+
+### Usage
 
 Launch Vim and run:
 
-```
-:PluginInstall
+```shell
+:PlugInstall
 ```
 
 ## [YouCompleteMe]
@@ -46,7 +74,7 @@ Should return `/usr/local/bin/cmake`. If not run `brew install cmake`.
 Then run:
 
 ```
-~/.vim/bundle/YouCompleteMe/install.py --clang-completer
+~/.vim/plugged/YouCompleteMe/install.py --clang-completer
 ```
 
 As referenced in the [YouCompleteMe docs].
@@ -73,7 +101,7 @@ let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 ### Syntax checking
 
 I'm using [Syntastic], which requires a little setup out side the scope of
-he `.vimrc`.
+the `.vimrc`.
 
 Install [eslint], [babel-eslint]  (for ES6 support), and [eslint-plugin-react]:
 
@@ -128,7 +156,7 @@ You should be good to go, and JSX with ES6 features will syntax check correctly!
 [Homebrew]: http://brew.sh/
 [Homebrew Cask]: https://github.com/caskroom/homebrew-cask
 [MacVim]: https://github.com/b4winckler/macvim
-[Vundle]: https://github.com/VundleVim/Vundle.vim
+[Vim-plug]: https://github.com/junegunn/vim-plug
 [YouCompleteMe]: https://github.com/Valloric/YouCompleteMe
 [YouCompleteMe docs]: https://github.com/Valloric/YouCompleteMe#mac-os-x-installation
 [PowerlineSymbols]: https://github.com/powerline/powerline/blob/develop/font/PowerlineSymbols.otf?raw=true

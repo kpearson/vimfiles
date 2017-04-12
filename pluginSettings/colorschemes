@@ -1,0 +1,9 @@
+" set vim to support 256 color terminal
+let &t_Co=256
+
+syntax enable
+
+" Set 80 character ruler
+let &colorcolumn=join(range(81,999),",")
+
+" vim:ft=vim
