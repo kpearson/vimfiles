@@ -26,8 +26,16 @@
 
 " ========== Plugin Initialization ============
 
+" auto-install vim-plug - Not working!
+if empty(glob('~/.config/nvim/autoload/plug.vim'))
+  silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
+      https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall
+endif
+
+" call plug#begin('~/.config/nvim/plugged')
 call plug#begin('~/.vim/plugged')
-source ~/.vim/plugins
+  source ~/.vim/plugins
 call plug#end()
 
 filetype plugin indent on
@@ -39,7 +47,7 @@ call s:SourceConfigFilesIn('rcfiles')
 call s:SourceConfigFilesIn('pluginSettings')
 
 " ============ Mappings ============
-
+let g:rspec_runner = "os_x_iterm"
 " Leader w to write
   nnoremap <Leader>w :w<CR>
 

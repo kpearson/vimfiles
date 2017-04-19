@@ -21,6 +21,11 @@ this is already taken care of.
     ln -s ~/.vim $XDG_CONFIG_HOME/nvim
     ln -s ~/.vimrc $XDG_CONFIG_HOME/nvim/init.vim
     ```
+* Install the Neovim python packages. (Needed for Neovim to use [YouCompleteMe])
+    ```shell
+    pip neovim
+    pip3 neovim
+    ```
 
 ## Vimrc
 
@@ -63,7 +68,7 @@ Launch Vim and run:
 
 ## [YouCompleteMe]
 
-Confirm Cmake was installed via Homebrew with:
+Confirm Cmake is installed via Homebrew with:
 
 ```
 which cmake

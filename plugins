@@ -39,6 +39,7 @@ Plug 'tpope/vim-rake'
 
 " RSpec - Rspec runner for Vim and MacVim.
 Plug 'thoughtbot/vim-rspec'
+Plug 'keith/rspec.vim'
 
 " vim-rbenv - Tab complete for the :Rbenv command
 Plug 'tpope/vim-rbenv'
