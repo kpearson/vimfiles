@@ -19,8 +19,14 @@ Plug 'rizzatti/dash.vim'
 " Fugitive - Interact with git via Vim
 Plug 'tpope/vim-fugitive'
 
+" Git wrapper
+Plug 'peterhurford/send.vim'
+
 " Lighline - A light and configurable statusline/tabline
 Plug 'itchyny/lightline.vim'
+
+" tcomment - file-type sensible comments
+Plug 'tomtom/tcomment_vim'
 
 " Asynchronously runs programs using Neovim's or Vim's job-control functionality
 Plug 'neomake/neomake'
@@ -35,10 +41,12 @@ Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-rails'
 
 " vim-rake - Help for working with Rake projects in vim
-Plug 'tpope/vim-rake'
+" Plug 'tpope/vim-rake'
 
-" RSpec - Rspec runner for Vim and MacVim.
-Plug 'thoughtbot/vim-rspec'
+" vim-test - Test runner for Vim and MacVim.
+Plug 'janko-m/vim-test'
+
+" rspec.vim - Improved syntax highlighting for Rspec
 Plug 'keith/rspec.vim'
 
 " vim-rbenv - Tab complete for the :Rbenv command
@@ -49,9 +57,6 @@ Plug 'hwartig/vim-seeing-is-believing'
 
 " Slueth.vim - Adjusts 'shiftwidth' and 'expandtab' based on the current file.
 Plug 'tpope/vim-sleuth'
-
-" tcomment - file-type sensible comments
-Plug 'tomtom/tcomment_vim'
 
 " Trailing-Whitespace
 Plug 'bronson/vim-trailing-whitespace'
@@ -72,6 +77,9 @@ Plug 'mxw/vim-jsx'
 " YouCompleteMe - Intelligent completion with fuzzy matching
 Plug 'Valloric/YouCompleteMe'
 
+" Syntastic - Syntax checking on the fly
+Plug 'scrooloose/syntastic'
+
 " VTR - Vim tmux integration
 " Plug 'christoomey/vim-tmux-navigator'
 
@@ -84,10 +92,7 @@ Plug 'Valloric/YouCompleteMe'
   " Plug 'tpope/vim-repeat'
 
 " Tabular - lines up text.
-" Plug 'godlygeek/tabular'  " Required for 'vim-markdown'.
-
-" Syntastic - Syntax checking on the fly
-" Plug 'scrooloose/syntastic'
+Plug 'godlygeek/tabular'  " Required for 'vim-markdown'.
 
 " vim-liquid - Liquid syntax and Jekyll enhancements
 " Plug 'tpope/vim-liquid'

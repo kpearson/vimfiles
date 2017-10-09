@@ -4,7 +4,7 @@
 set laststatus=2
 
 let g:lightline = {
-  \ 'colorscheme': 'wombat',
+  \ 'colorscheme': 'jellybeans',
   \ 'active': {
   \   'left': [ [ 'mode', ], [ 'fugitive', 'readonly', 'filename' ] ],
   \   'right': [ [ 'syntastic', 'column', 'lineinfo' ], [ 'filetype' ] ]
@@ -23,13 +23,13 @@ let g:lightline = {
   \ 'component_type': {
   \   'syntastic': 'error',
   \ },
-  \ 'separator': { 'left': '⮀', 'right': '⮂' },
-  \ 'subseparator': { 'left': '⮁', 'right': '⮃' }
+  \ 'separator': { 'left': '', 'right': '' },
+	\ 'subseparator': { 'left': '', 'right': '' }
   \ }
 
 function! MyReadonly()
   if &readonly
-    return "⭤"
+    return ""
   else
     return ""
   endif
@@ -38,13 +38,13 @@ endfunction
 function! MyFugitive()
   if exists('*fugitive#head')
     let _ = fugitive#head()
-    return strlen(_) ? '⭠ '._ : ''
+    return strlen(_) ? ' '._ : ''
   endif
   return ''
 endfunction
 
 function! MyLineInfo()
-  return '⭡ ' . line('.') . '/' . line('$')
+  return ' ' . line('.') . '/' . line('$')
 endfunction
 
 augroup AutoSyntastic

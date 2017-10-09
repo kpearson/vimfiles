@@ -26,6 +26,26 @@ this is already taken care of.
     pip neovim
     pip3 neovim
     ```
+* Italic fonts in Neovim need a little help.
+    * Create a file called `256color-italic.terminfo` and init place:
+        ```
+        xterm-256color-italic|xterm with 256 colors and italic,
+        sitm=\E[3m, ritm=\E[23m,
+        use=xterm-256color,
+        ```
+    * Then from the same directory as the new file run:
+        ```
+        $ tic xterm-256color-italic.terminfo
+        ```
+    * In the `bashrc` or `zshrc` add:
+        ```
+        export TERM=xterm-256color-italic
+        ```
+    * Finally add to the neovim's `~/.config/init/` or symlinked `~/.vimrc`
+        ```
+        set termguicolors
+        ```
+    * If your using iTerm confirm "Italic text allowed" is enabled.
 
 ## Vimrc
 
