@@ -2,7 +2,7 @@
 " Syntastic - Syntax checking on the fly
 " --------------------------------------
 
-" Plug 'scrooloose/syntastic'
+Plug 'scrooloose/syntastic'
 
 " nmap <silent> <leader>sy :SyntasticToggleMode<cr>
 
