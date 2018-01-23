@@ -34,7 +34,7 @@ Plug 'neomake/neomake'
 " NerdTree - Filesystem explorer
 Plug 'scrooloose/nerdtree'
 
-" Ruby - Configuration for editing and compiling Ruby
+" Ruby - You konw, Ruby
 Plug 'vim-ruby/vim-ruby'
 
 " Rails.vim - Help for working with Rails projects in vim
@@ -98,7 +98,7 @@ Plug 'godlygeek/tabular'  " Required for 'vim-markdown'.
 " Plug 'tpope/vim-liquid'
 
 " Vim-Livedown - Markdown previewer. Plugin for Livedown
-" Plug 'shime/vim-livedown'
+Plug 'shime/vim-livedown'
 
 " vim-go - Go lang syntax
 " Plug 'fatih/vim-go'

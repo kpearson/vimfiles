@@ -2,14 +2,15 @@
 
 ## Macvim
 
-Install [MacVim] via [Homebrew Cask].
-:heavy_exclamation_mark: MacVim requires the full xCode (Command Line Tools is
-not enough, _sigh_). Also, the MacVim binary is essential for the
-[YouCompleteMe] plugin.
+This set of configurations requires [Macvim].
 
-Symlink `vimrc` to the root directory as `.vimrc`. If these vimfiles were
-brought in with my [dotfiles](www.github.com/kpearson/dotfiles) install script,
-this is already taken care of.
+Several of the libraries used here behave subtely differently when using Macvim.
+Also, the MacVim binary is essential for the [YouCompleteMe] plugin.
+
+Unfortunitly MacVim requires the entirety of xCode (Command Line Tools is not
+enough, _sigh_).
+
+Install [MacVim] via [Homebrew Cask].
 
 ## Neovim
 
@@ -49,8 +50,14 @@ this is already taken care of.
 
 ## Vimrc
 
+Symlink `vimrc` to the root directory as `.vimrc`.
+
+> If these vimfiles were brought in with my
+[Dotfiles](www.github.com/kpearson/dotfiles) install script, this is already
+taken care of.
+
 The vimrc file is split up across multiple files in two directories, `rcfiles`
-and `rcplugins`. The file are organized by topic and contain plugin specific
+and `rcplugins`. The file are organized by plugin and contain plugin specific
 bindings and settings. This way it is easy to know what bindings and settings
 are related to a given plugin.
 
@@ -104,20 +111,17 @@ Then run:
 
 As referenced in the [YouCompleteMe docs].
 
-## [React.js] Vim Setup
-
-A Few tweaks to Vim are neede for a smooth React experience.
+## [Reactjs] Vim Setup
 
 ### Syntax highlighting
 
-To get the syntax highlighting to look right, use
-[mxw's Vim JSX](https://github.com/mxw/vim-jsx) highlighting.
+Use [mxw's Vim JSX](https://github.com/mxw/vim-jsx) highlighting.
 
 ```
 Plugin 'mxw/vim-jsx'
 ```
 
-To use JSX syntax in .js files, you'll find this is my `.vimrc`.
+To get syntax highlighting in a .js file add this to your Using JSX syntax  in .js files requires an additional config.
 
 ```
 let g:jsx_ext_required = 0 " Allow JSX in normal JS files
@@ -185,4 +189,5 @@ You should be good to go, and JSX with ES6 features will syntax check correctly!
 [YouCompleteMe]: https://github.com/Valloric/YouCompleteMe
 [YouCompleteMe docs]: https://github.com/Valloric/YouCompleteMe#mac-os-x-installation
 [PowerlineSymbols]: https://github.com/powerline/powerline/blob/develop/font/PowerlineSymbols.otf?raw=true
+[Reactjs]: https://reactjs.org/
 
