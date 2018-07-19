@@ -176,7 +176,7 @@ Finally, configure [Syntastic] to use ESLint in your `.vimrc`.
 let g:syntastic_javascript_checkers = ['eslint']
 ```
 
-You should be good to go, and JSX with ES6 features will syntax check correctly! 
+You should be good to go, and JSX with ES6 features will syntax check correctly!
 
 [eslint-plugin-react]: https://github.com/yannickcr/eslint-plugin-react
 [babel-eslint]: https://github.com/babel/babel-eslint

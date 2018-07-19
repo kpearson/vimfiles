@@ -89,4 +89,5 @@ let g:rspec_runner = "os_x_iterm"
   cmap %/ <C-R>=expand("%:p:h")."/"<CR>
   cmap %% <C-R>=expand("%")<CR>
 
+  let g:python_host_prog = '/usr/local/bin/python'
 " vim:ft=vim

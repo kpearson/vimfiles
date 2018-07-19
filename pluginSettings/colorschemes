@@ -12,12 +12,14 @@ let &colorcolumn="80,".join(range(120,999),",")
 " match OverLength /\%81v.\+/
 " let &colorcolumn=join(range(81,999),",")
 
+colorscheme monokai-chris
+
 " Change colorsheme based on time of day
-if strftime("%H") < 13
-  colorscheme spacegray "southwest-fog "lightning
-else
-  set background=dark
-  colorscheme jellybeans
-endif
+" if strftime("%H") < 13
+"   colorscheme spacegray "southwest-fog "lightning
+" else
+"   set background=dark
+"   colorscheme jellybeans
+" endif
 
 " vim:ft=vim

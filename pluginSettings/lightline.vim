@@ -47,13 +47,13 @@ function! MyLineInfo()
   return ' ' . line('.') . '/' . line('$')
 endfunction
 
-augroup AutoSyntastic
-  autocmd!
-  autocmd BufWritePost *.rb,*.js,*.css,*.sh call s:syntastic()
-augroup END
-function! s:syntastic()
-  SyntasticCheck
-  call lightline#update()
-endfunction
+" augroup AutoSyntastic
+"   autocmd!
+"   autocmd BufWritePost *.rb,*.js,*.css,*.sh call s:syntastic()
+" augroup END
+" function! s:syntastic()
+"   SyntasticCheck
+"   call lightline#update()
+" endfunction
 
 " vim:ft=vim

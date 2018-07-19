@@ -21,7 +21,7 @@
 " ____ Hybrid relative and absolute for current line
   " set relativenumber
   " if v:version > 703
-    set number 
+    set number
   " endif
 
 " _____ Disable sound/visual bell on errors ______
