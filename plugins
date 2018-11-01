@@ -72,6 +72,8 @@ Plug 'mxw/vim-jsx'
 " YouCompleteMe - Intelligent completion with fuzzy matching
 Plug 'Valloric/YouCompleteMe'
 
+Plug 'derekwyatt/vim-scala'
+
 " VTR - Vim tmux integration
 " Plug 'christoomey/vim-tmux-navigator'
 
