@@ -110,4 +110,7 @@ Plug 'fatih/vim-go'
 " vim-autoclose - Enable an auto-close
 " Plug 'townk/vim-autoclose'
 
+Plug 'prabirshrestha/async.vim'
+Plug 'prabirshrestha/vim-lsp'
+
 " vim:ft=vim

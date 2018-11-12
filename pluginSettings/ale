@@ -1,6 +1,9 @@
 " ALE (Asynchronous Lint Engine)
 
-let g:ale_linters = { 'javascript': ['eslint'],
-      \ 'ruby': ['rubocop'] }
+let g:ale_linters = {
+		  \ 'javascript': ['eslint'],
+		  \ 'ruby': ['rubocop'],
+		  \ 'python': ['pylint']
+		  \ }
 
 " vim:ft=vim

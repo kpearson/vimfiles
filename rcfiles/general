@@ -59,6 +59,4 @@
 
   map <Leader>v  :so ~/.vimrc<CR>
 
-  filetype plugin indent on
-
 " vim:ft=vim
