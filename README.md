@@ -16,7 +16,7 @@ Install [MacVim] via [Homebrew Cask].
 
 * Install [Neovim] via [Homebrew] `brew install neovim/neovim/neovim`.
 * Symlink the `vimrc` and `.vim` directory to the new Neovim locations.
-    As mentioned in `:help nvim-from-vim`, run:
+    As mentioned in `:help nvim-from-vim`
     ```shell
     mkdir -p ${XDG_CONFIG_HOME:=$HOME/.config}
     ln -s ~/.vim $XDG_CONFIG_HOME/nvim
@@ -24,11 +24,11 @@ Install [MacVim] via [Homebrew Cask].
     ```
 * Install the Neovim python packages. (Needed for Neovim to use [YouCompleteMe])
     ```shell
-    pip neovim
-    pip3 neovim
+    pip install neovim
+    pip3 install neovim
     ```
 * Italic fonts in Neovim need a little help.
-    * Create a file called `256color-italic.terminfo` and init place:
+    * Create a file called `256color-italic.terminfo`
         ```
         xterm-256color-italic|xterm with 256 colors and italic,
         sitm=\E[3m, ritm=\E[23m,
