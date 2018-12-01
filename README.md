@@ -1,5 +1,7 @@
 # Kit's Vim files
 
+To bootstrap the setup run: `chmod 755 ~/.vim/setup && ~/.vim/setup`
+
 ## Macvim
 
 This set of configurations requires [Macvim].
@@ -7,8 +9,8 @@ This set of configurations requires [Macvim].
 Several of the libraries used here behave subtely differently when using Macvim.
 Also, the MacVim binary is essential for the [YouCompleteMe] plugin.
 
-Unfortunitly MacVim requires the entirety of xCode (Command Line Tools is not
-enough, _sigh_).
+Unfortunitly MacVim requires all of xCode (Command Line Tools is not enough,
+_sigh_).
 
 Install [MacVim] via [Homebrew Cask].
 
@@ -51,10 +53,6 @@ Install [MacVim] via [Homebrew Cask].
 ## Vimrc
 
 Symlink `vimrc` to the root directory as `.vimrc`.
-
-> If these vimfiles were brought in with my
-[Dotfiles](www.github.com/kpearson/dotfiles) install script, this is already
-taken care of.
 
 The vimrc file is split up across multiple files in two directories, `rcfiles`
 and `rcplugins`. The file are organized by plugin and contain plugin specific
