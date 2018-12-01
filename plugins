@@ -10,6 +10,8 @@ Plug 'tpope/vim-bundler'
 " Colorschemes - one stop shop for vim colorschemes
 Plug 'flazz/vim-colorschemes'
 
+Plug 'powerline/powerline-fonts'
+
 " Fuzzy searcher
 Plug 'kien/ctrlp.vim'
 
