@@ -10,6 +10,13 @@ Plug 'tpope/vim-bundler'
 " Colorschemes - one stop shop for vim colorschemes
 Plug 'flazz/vim-colorschemes'
 
+" Colorschemes - Colorschemes which make use of Neovims color rendering
+Plug 'iCyMind/NeoSolarized'
+Plug 'joshdick/onedark.vim'
+
+" Plug 'amix/vim-zenroom2'
+Plug 'junegunn/goyo.vim'
+
 Plug 'powerline/powerline-fonts'
 
 " Fuzzy searcher
@@ -20,6 +27,7 @@ Plug 'rizzatti/dash.vim'
 
 " Fugitive - Interact with git via Vim
 Plug 'tpope/vim-fugitive'
+Plug 'shumphrey/fugitive-gitlab.vim'
 
 " Git wrapper
 Plug 'peterhurford/send.vim'
@@ -81,8 +89,17 @@ Plug 'pangloss/vim-javascript'
 " vim-jsx - Syntax highlighting and indenting for JSX
 Plug 'mxw/vim-jsx'
 
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
+let g:deoplete#enable_at_startup = 1
+
 " YouCompleteMe - Intelligent completion with fuzzy matching
-Plug 'Valloric/YouCompleteMe'
+" Plug 'Valloric/YouCompleteMe'
 
 " Syntastic - Syntax checking on the fly
 " Plug 'scrooloose/syntastic'
@@ -114,5 +131,7 @@ Plug 'fatih/vim-go'
 
 Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/vim-lsp'
+
+Plug 'nathanaelkane/vim-indent-guides'
 
 " vim:ft=vim

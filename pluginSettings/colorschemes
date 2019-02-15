@@ -12,7 +12,8 @@ let &colorcolumn="80,".join(range(120,999),",")
 " match OverLength /\%81v.\+/
 " let &colorcolumn=join(range(81,999),",")
 
-colorscheme monokai-chris
+" colorscheme monokai-chris
+colorscheme onedark
 
 " Change colorsheme based on time of day
 " if strftime("%H") < 13
