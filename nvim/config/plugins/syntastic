@@ -2,6 +2,7 @@
 " Syntastic - Syntax checking on the fly
 " --------------------------------------
 
+asdfasdf
 " nmap <silent> <leader>sy :SyntasticToggleMode<cr>
 "
 " set statusline+=%#warningmsg#
