@@ -1,113 +1,85 @@
-# Kit's Vim files
+# Vim files
 
-To bootstrap the setup run: `chmod 755 ~/.vim/setup && ~/.vim/setup`
+Author: Kit Pearson
 
-## Macvim
+## Quick setup:
 
-This set of configurations requires [Macvim].
+Assuming you have no current VIM setup. Clone this repo to user root of your
+system and run:
 
-Several of the libraries used here behave subtely differently when using Macvim.
-Also, the MacVim binary is essential for the [YouCompleteMe] plugin.
+```
+chmod 755 ~/.vim/setup && ~/.vim/setup`
+```
 
-Unfortunitly MacVim requires all of xCode (Command Line Tools is not enough,
-_sigh_).
+## Change log:
 
-Install [MacVim] via [Homebrew Cask].
+- Dropping support for Vim. Neovim only.
+- Dropping support for the youcompleteme plugin in lue of [COC] (Conquer of Completion)
 
-## Neovim
+## Setup
 
-* Install [Neovim] via [Homebrew] `brew install neovim/neovim/neovim`.
-* Symlink the `vimrc` and `.vim` directory to the new Neovim locations.
-    As mentioned in `:help nvim-from-vim`
-    ```shell
-    mkdir -p ${XDG_CONFIG_HOME:=$HOME/.config}
-    ln -s ~/.vim $XDG_CONFIG_HOME/nvim
-    ln -s ~/.vimrc $XDG_CONFIG_HOME/nvim/init.vim
-    ```
-* Install the Neovim python packages. (Needed for Neovim to use [YouCompleteMe])
-    ```shell
-    pip install neovim
-    pip3 install neovim
-    ```
-* Italic fonts in Neovim need a little help.
-    * Create a file called `256color-italic.terminfo`
-        ```
-        xterm-256color-italic|xterm with 256 colors and italic,
-        sitm=\E[3m, ritm=\E[23m,
-        use=xterm-256color,
-        ```
-    * Then from the same directory as the new file run:
-        ```
-        $ tic xterm-256color-italic.terminfo
-        ```
-    * In the `bashrc` or `zshrc` add:
-        ```
-        export TERM=xterm-256color-italic
-        ```
-    * Finally add to the neovim's `~/.config/init/` or symlinked `~/.vimrc`
-        ```
-        set termguicolors
-        ```
-    * If your using iTerm confirm "Italic text allowed" is enabled.
+### Install
 
-## Vimrc
+Install [Neovim] via [Homebrew] `brew install neovim/neovim/neovim`.
 
-Symlink `vimrc` to the root directory as `.vimrc`.
+>The next couple steps are included in the _setup.sh_ script.
 
-The vimrc file is split up across multiple files in two directories, `rcfiles`
-and `rcplugins`. The file are organized by plugin and contain plugin specific
-bindings and settings. This way it is easy to know what bindings and settings
-are related to a given plugin.
+### Link the project
 
-:large_orange_diamond: Caveat: This vim setup (lightline plugin) expects the
-"PowerlineSymbols-Powerline" font to be available. Download [PowerlineSymbols]
-and install into OSX Font Book.
+Symlink this project directory to the new Neovim locations.
 
-## Plugins
+```shell
+mkdir -p "$HOME"/.config
+ln -s "$HOME"/.vim "$HOME"/.config/nvim
+```
+
+### Italic fonts
+
+Italic fonts in Neovim need a little help.
+  * Create a file called `256color-italic.terminfo` with the folliwing contense:
+      ```
+      xterm-256color-italic|xterm with 256 colors and italic,
+      sitm=\E[3m, ritm=\E[23m,
+      use=xterm-256color,
+      ```
+  * Then from the same directory as the new file run:
+      ```
+      $ tic xterm-256color-italic.terminfo
+      ```
+  * In the `bashrc` or `zshrc` add:
+      ```
+      export TERM=xterm-256color-italic
+      ```
+  * Finally add to the neovim's `~/.config/init/` or symlinked `~/.vimrc`
+      ```
+      set termguicolors
+      ```
+  * If your using iTerm ensure "Italic text allowed" is enabled.
+
+
+### Completions
+
+Conquer of Completion requires [nodejs] >= 8.10.0
+
+### Snippets
+
+TODO: Not currently working
+
+### Lightline
+
+The lightline plugin expects the "PowerlineSymbols-Powerline" font to be
+available. Download [PowerlineSymbols] and install into OSX Font Book.
+
+## Plugin Manager
 
 [Vim-plug] is used to manage plugins.
 
-### Installation
+[Vim-plug] is automatically downloaded the first time NVIM is run if it is not
+present in the `autoload` directory. If that happens `Pluginstall` will also
+run automatically. Find all logic related to this in _config/plugins.vim_
 
-#### Unix
+Run `:PlugStatus` from inside VIM for more info.
 
-```shell
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-```
-
-#### Neovim
-
-```shell
-curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-```
-
-### Usage
-
-Launch Vim and run:
-
-```shell
-:PlugInstall
-```
-
-## [YouCompleteMe]
-
-Confirm Cmake is installed via Homebrew with:
-
-```
-which cmake
-```
-
-Should return `/usr/local/bin/cmake`. If not run `brew install cmake`.
-
-Then run:
-
-```
-~/.vim/plugged/YouCompleteMe/install.py --clang-completer
-```
-
-As referenced in the [YouCompleteMe docs].
 
 ## [Reactjs] Vim Setup
 
@@ -119,7 +91,8 @@ Use [mxw's Vim JSX](https://github.com/mxw/vim-jsx) highlighting.
 Plugin 'mxw/vim-jsx'
 ```
 
-To get syntax highlighting in a .js file add this to your Using JSX syntax  in .js files requires an additional config.
+To get syntax highlighting in a .js file add this to your 
+Using JSX syntax  in .js files requires an additional config.
 
 ```
 let g:jsx_ext_required = 0 " Allow JSX in normal JS files
@@ -182,10 +155,9 @@ You should be good to go, and JSX with ES6 features will syntax check correctly!
 [syntastic]: https://github.com/vim-syntastic/syntastic
 [Homebrew]: http://brew.sh/
 [Homebrew Cask]: https://github.com/caskroom/homebrew-cask
-[MacVim]: https://github.com/b4winckler/macvim
 [Vim-plug]: https://github.com/junegunn/vim-plug
-[YouCompleteMe]: https://github.com/Valloric/YouCompleteMe
-[YouCompleteMe docs]: https://github.com/Valloric/YouCompleteMe#mac-os-x-installation
 [PowerlineSymbols]: https://github.com/powerline/powerline/blob/develop/font/PowerlineSymbols.otf?raw=true
 [Reactjs]: https://reactjs.org/
-
+[COC]: https://github.com/neoclide/coc.nvim
+[Conquer of Completion]: https://github.com/neoclide/coc.nvim
+[nodejs]: https://nodejs.org/en/
