@@ -1,4 +1,5 @@
 " Source all files in ~/.config/nvim/config/plugins/ with a .vim extention
+
 function! s:SourceConfigFilesIn(directory)
   let directory_splat = '~/.config/nvim/config/' . a:directory . '/*.vim'
   for config_file in split(glob(directory_splat), '\n')
