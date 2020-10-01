@@ -1,1 +1,1 @@
-autocmd BufWritePre <buffer> call FormatJson()
+" autocmd BufWritePre <buffer> call FormatJson()

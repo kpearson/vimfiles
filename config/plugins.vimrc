@@ -22,9 +22,11 @@ Plug 'kien/ctrlp.vim'
 " _________________ Git __________________
 
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
 Plug 'shumphrey/fugitive-gitlab.vim'
 Plug 'christoomey/vim-conflicted'
-Plug 'airblade/vim-gitgutter'
+" Plug 'airblade/vim-gitgutter'
+Plug 'mhinz/vim-signify'
 " Plug 'peterhurford/send.vim'
 
 " ______________ Utilities _______________
