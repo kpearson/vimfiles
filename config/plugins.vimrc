@@ -10,10 +10,6 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'neomake/neomake' " Asynchronous job-control
-Plug 'w0rp/ale' " Asynchronous Lint Engine
-  " Plug 'maximbaz/lightline-ale' " ALE indicator for Lightline
-
 " ________________ Search ________________
 
 Plug 'rking/ag.vim'
@@ -25,52 +21,44 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'shumphrey/fugitive-gitlab.vim'
 Plug 'christoomey/vim-conflicted'
-" Plug 'airblade/vim-gitgutter'
 Plug 'mhinz/vim-signify'
 " Plug 'peterhurford/send.vim'
 
 " ______________ Utilities _______________
 
 Plug 'itchyny/lightline.vim'
-  Plug 'powerline/powerline-fonts'
+  " Plug 'powerline/powerline-fonts'
 Plug 'tomtom/tcomment_vim'
-Plug 'scrooloose/nerdtree'
+" Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-surround'
   Plug 'tpope/vim-repeat'
 Plug 'bronson/vim-trailing-whitespace'
-" Plug 'rizzatti/dash.vim'
+Plug 'ryanoasis/vim-devicons'
+Plug 'vim-syntastic/syntastic'
 
 " ______ Auto Completion & Snippets ______
 
 if has('nvim')
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
-  " Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-  " Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
+    Plug 'josa42/vim-lightline-coc'
 else
   Plug 'Shougo/deoplete.nvim'
   Plug 'roxma/nvim-yarp'
   Plug 'roxma/vim-hug-neovim-rpc'
+  Plug 'SirVer/ultisnips'
+    Plug 'honza/vim-snippets'
+    Plug 'justinj/vim-react-snippets'
 endif
-
-Plug 'Shougo/neosnippet.vim'
-Plug 'Shougo/neosnippet-snippets'
-  Plug 'honza/vim-snippets'
-  Plug 'justinj/vim-react-snippets'
 
 " ___________ Buffer Fomatting ___________
 
-Plug 'iCyMind/NeoSolarized' " Colorschemes - Neovim color rendering
+" Plug 'iCyMind/NeoSolarized' " Colorschemes - Neovim color rendering
 Plug 'joshdick/onedark.vim'
+Plug 'cocopon/iceberg.vim'
 " Plug 'flazz/vim-colorschemes' " All the colors
 Plug 'godlygeek/tabular'  " Required for 'vim-markdown'.
-Plug 'plasticboy/vim-markdown'
-  Plug 'shime/vim-livedown' " Markdown previewer. Plugin for Livedown
-" Plug 'tpope/vim-sleuth' " File type based 'shiftwidth' and 'expandtab'
-"   Plug 'nathanaelkane/vim-indent-guides'
-" Plug 'scrooloose/syntastic'
-" Plug 'townk/vim-autoclose'
-" Plug 'prabirshrestha/vim-lsp'
-"   Plug 'prabirshrestha/async.vim'
+Plug 'shime/vim-livedown' " Markdown previewer. Plugin for Livedown
+Plug 'sheerun/vim-polyglot'
 
 " ________________ Ruby ________________
 

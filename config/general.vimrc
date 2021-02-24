@@ -23,7 +23,7 @@ set timeoutlen=500              " Time between key strokes for combination comma
 set clipboard=unnamed           " Clipboard to Mirror the Default Register
 set showcmd                     " Show current command in the lower right
 set makeef=~/##
-set nobackup " ____ I hate swap files in my prject dirs ___
+set nobackup " ____ I hate swap files in my project dirs ___
 set nowritebackup
 set noswapfile
 
@@ -42,7 +42,7 @@ set ignorecase  " Case insensitive pattern matching
 set smartcase   " Overide ignorecase if pattern contains upcase
 
 if has("nvim")
-  set termguicolors " Esential for Neovim to display comments as italic
+  set termguicolors " Essential for Neovim to display comments as italic
 endif
 
 " Comments to italic - NOT WORKING!
@@ -81,5 +81,8 @@ command! ReformatCurlRequest silent %s/\s\(-.\{-}\)\s/
 " Move visual selection
 vnoremap J :m '>+1<cr>gv=gv
 vnoremap K :m '<-2<cr>gv=gv
+
+" NeoVim native Live Substitution
+set inccommand=split
 
 " vim:ft=vim

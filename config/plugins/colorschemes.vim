@@ -13,7 +13,8 @@ let &colorcolumn="80,".join(range(120,999),",")
 " let &colorcolumn=join(range(81,999),",")
 
 " colorscheme monokai-chris
-colorscheme onedark
+" colorscheme onedark
+colorscheme iceberg
 
 " Change colorsheme based on time of day
 " if strftime("%H") < 13

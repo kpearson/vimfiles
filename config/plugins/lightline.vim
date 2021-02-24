@@ -6,30 +6,41 @@ set laststatus=2
 let g:lightline = {
   \ 'colorscheme': 'jellybeans',
   \ 'active': {
-  \   'left': [ [ 'mode', ], [ 'fugitive', 'readonly', 'filename' ] ],
-  \   'right': [ [ 'syntastic', 'column', 'lineinfo' ], [ 'filetype' ] ]
+  \   'left': [
+  \             [ 'mode' ],
+  \             [ 'fugitive', 'readonly' ], ['filename' ]
+  \           ],
+  \   'right': [
+  \              [ 'column', 'lineinfo' ],
+  \              [ 'filetype' ]
+  \            ]
   \ },
   \ 'component': {
-  \   'column': '%c'
+  \   'column': "\uE0A3 " . '%c',
   \ },
   \ 'component_function': {
   \   'fugitive': 'MyFugitive',
   \   'readonly': 'MyReadonly',
-  \   'lineinfo': 'MyLineInfo'
+  \   'lineinfo': 'MyLineInfo',
+  \   'columninfo': 'MyColumnInfo',
+  \   'gitbranch': 'FugitiveHead',
+  \   'mode': 'LightlineMode'
   \ },
-  \ 'component_expand': {
-  \   'syntastic': 'SyntasticStatuslineFlag',
-  \ },
-  \ 'component_type': {
-  \   'syntastic': 'error',
-  \ },
-  \ 'separator': { 'left': '', 'right': '' },
-	\ 'subseparator': { 'left': '', 'right': '' }
+  \ 'separator': { 'left': "\uE0C6", 'right': "\uE0C5" },
+	\ 'subseparator': { 'left': "\uE0C4", 'right': "\uE0C7" }
   \ }
+
+" function! LightlineMode() abort
+"   let ftmap = {
+"               \ 'coc-explorer': 'EXPLORER',
+"               \ 'fugitive': 'FUGITIVE'
+"               \ }
+"   return get(ftmap, &filetype, lightline#mode())
+" endfunction
 
 function! MyReadonly()
   if &readonly
-    return ""
+    return "\uE0A2"
   else
     return ""
   endif
@@ -38,14 +49,21 @@ endfunction
 function! MyFugitive()
   if exists('*fugitive#head')
     let _ = fugitive#head()
-    return strlen(_) ? ' '._ : ''
+    return strlen(_) ? "\uE0A0 " ._ : ''
   endif
   return ''
 endfunction
 
 function! MyLineInfo()
-  return ' ' . line('.') . '/' . line('$')
+  return "\uE0A1 " . line('.') . '/' . line('$')
 endfunction
+
+function! LightlineMode()
+  return (lightline#mode() . ' ' . lightline#coc#errors() . lightline#coc#warnings() . lightline#coc#ok())
+endfunction
+
+" register components:
+call lightline#coc#register()
 
 " augroup AutoSyntastic
 "   autocmd!
