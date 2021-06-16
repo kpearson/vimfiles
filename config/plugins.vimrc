@@ -34,7 +34,6 @@ Plug 'tpope/vim-surround'
   Plug 'tpope/vim-repeat'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'ryanoasis/vim-devicons'
-Plug 'vim-syntastic/syntastic'
 
 " ______ Auto Completion & Snippets ______
 
@@ -55,10 +54,13 @@ endif
 " Plug 'iCyMind/NeoSolarized' " Colorschemes - Neovim color rendering
 Plug 'joshdick/onedark.vim'
 Plug 'cocopon/iceberg.vim'
+Plug 'aonemd/kuroi.vim'
 " Plug 'flazz/vim-colorschemes' " All the colors
 Plug 'godlygeek/tabular'  " Required for 'vim-markdown'.
 Plug 'shime/vim-livedown' " Markdown previewer. Plugin for Livedown
 Plug 'sheerun/vim-polyglot'
+Plug 'othree/yajs.vim'
+Plug 'othree/javascript-libraries-syntax.vim'
 
 " ________________ Ruby ________________
 
@@ -71,12 +73,6 @@ Plug 'keith/rspec.vim'
 Plug 'tpope/vim-rbenv'
 Plug 'hwartig/vim-seeing-is-believing'
 " Plug 'tpope/vim-liquid'
-
-" ______________ Javascript ______________
-
-Plug 'pangloss/vim-javascript'
-Plug 'mxw/vim-jsx'
-Plug 'posva/vim-vue'
 
 " ________________ Golang ________________
 

@@ -161,6 +161,12 @@ https://yeripratama.com/blog/customizing-vim-lightline/
 
 Coc configure yaml schema ref: https://www.schemastore.org/json/
 
+## Debugging Js indent issue
+
+:verbose set smartindent? = ~/.vim/plugged/vim-javascript/indent/javascript.vim line 15
+autoindent? = /usr/local/Cellar/neovim/0.4.4/share/nvim/runtime/indent/xml.vim line 38
+indentexpr? = ~/.vim/plugged/vim-jsx/after/indent/jsx.vim line 22
+
 [eslint-plugin-react]: https://github.com/yannickcr/eslint-plugin-react
 [babel-eslint]: https://github.com/babel/babel-eslint
 [eslint]: http://eslint.org/

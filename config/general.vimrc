@@ -85,4 +85,6 @@ vnoremap K :m '<-2<cr>gv=gv
 " NeoVim native Live Substitution
 set inccommand=split
 
+com! FormatJSON %!python -m json.tool
+
 " vim:ft=vim
