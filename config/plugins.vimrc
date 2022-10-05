@@ -55,7 +55,7 @@ endif
 Plug 'joshdick/onedark.vim'
 Plug 'cocopon/iceberg.vim'
 Plug 'aonemd/kuroi.vim'
-" Plug 'flazz/vim-colorschemes' " All the colors
+Plug 'flazz/vim-colorschemes' " All the colors
 Plug 'godlygeek/tabular'  " Required for 'vim-markdown'.
 Plug 'shime/vim-livedown' " Markdown previewer. Plugin for Livedown
 Plug 'sheerun/vim-polyglot'
@@ -77,6 +77,9 @@ Plug 'hwartig/vim-seeing-is-believing'
 " ________________ Golang ________________
 
 Plug 'fatih/vim-go'
+
+Plug 'https://github.com/alok/notational-fzf-vim'
+  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
 call plug#end()
 
