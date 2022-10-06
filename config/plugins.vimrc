@@ -34,6 +34,7 @@ Plug 'tpope/vim-surround'
   Plug 'tpope/vim-repeat'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'ryanoasis/vim-devicons'
+Plug 'editorconfig/editorconfig-vim'
 
 " ______ Auto Completion & Snippets ______
 

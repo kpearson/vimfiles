@@ -13,7 +13,7 @@
   "explorer.file.showHiddenFiles": true,
   "explorer.file.reveal.auto": false,
   "explorer.icon.source": "vim-devicons",
-  "explorer.icon.enabledNerdFont": true,
+  "explorer.icon.enableNerdfont": true,
   "explorer.previewAction.onHover": false,
   "explorer.keyMappings.global": {
     "<cr>": ["expandable?", "expand", "open"],
@@ -29,11 +29,7 @@
   "tsserver.formatOnType": true,
   // "tsserver.enable": false,
   "coc.preferences.formatOnType": true,
-  "coc.preferences.formatOnSaveFiletypes": [
-    "json",
-    "css",
-    "markdown"
-  ],
+  "coc.preferences.formatOnSaveFiletypes": ["*"],
   "cSpell.userWords": [
     "Ancho",
     "Architected",
