@@ -1,0 +1,33 @@
+{
+  "name": "test-project",
+  "version": "1.0.0",
+  "description": "LSP testing for JSON",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^4.18.0",
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "jest": "^29.0.0"
+  },
+  // This comment should trigger an error (comments not allowed in JSON)
+  "keywords": ["test", "lsp", "neovim"],
+  "author": "Test User",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/test/test.git"
+  },
+  "bugs": {
+    "url": "https://github.com/test/test/issues"
+  },
+  "homepage": "https://github.com/test/test#readme",
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "trailing-comma": "should cause error",
+}

@@ -1,0 +1,60 @@
+# YAML LSP Test File  
+# Should trigger yamlls language server
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: test-config
+  namespace: default
+data:
+  # Indentation error below (should be 2 spaces)
+    database_url: "postgresql://localhost:5432/mydb"
+  redis_url: "redis://localhost:6379"
+  
+  # Missing quotes around value with special characters
+  special_value: hello@world.com
+  
+  # Duplicate key (should trigger warning)
+  app_name: "MyApp"
+  app_name: "MyApp2"
+
+# Docker Compose example with issues
+version: '3.8'
+services:
+  web:
+    image: nginx:latest
+    ports:
+      - "80:80"
+    # Invalid indentation below
+  environment:
+      - NODE_ENV=production
+    volumes:
+      - ./html:/usr/share/nginx/html
+      
+  # Missing required fields
+  database:
+    image: postgres:13
+    # Missing environment variables that postgres requires
+
+# Kubernetes example
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: test-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: test-app
+  template:
+    metadata:
+      labels:
+        app: test-app
+    spec:
+      containers:
+      - name: test-container
+        image: nginx:latest
+        # Invalid port configuration
+        ports:
+        - containerPort: "80"  # Should be number, not string
