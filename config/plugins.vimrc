@@ -62,6 +62,12 @@ Plug 'shime/vim-livedown' " Markdown previewer. Plugin for Livedown
 Plug 'sheerun/vim-polyglot'
 Plug 'othree/yajs.vim'
 Plug 'othree/javascript-libraries-syntax.vim'
+Plug 'prisma/vim-prisma'
+
+" __________ Language Support __________
+" ______________________________________
+
+Plug 'evanleck/vim-svelte'
 
 " ________________ Ruby ________________
 

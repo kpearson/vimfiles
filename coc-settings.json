@@ -26,10 +26,12 @@
     "ma": "addFile",
     "mA": "addDirectory"
   },
-  "tsserver.formatOnType": true,
+  "snippets.ultisnips.pythonPrompt": false,
+  "svelte.enable-ts-plugin": true,
+  // "tsserver.formatOnType": true,
   // "tsserver.enable": false,
   "coc.preferences.formatOnType": true,
-  "coc.preferences.formatOnSaveFiletypes": ["*"],
+  // "coc.preferences.formatOnSaveFiletypes": ["*"],
   "cSpell.userWords": [
     "Ancho",
     "Architected",
