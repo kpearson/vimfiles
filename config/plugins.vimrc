@@ -10,7 +10,7 @@ require("lazy").setup("plugins", {
   },
   install = {
     missing = true, -- Install missing plugins on startup
-    colorscheme = { "onedark", "iceberg", "kuroi" },
+    colorscheme = { "catppuccin" },
   },
   checker = {
     enabled = true, -- Check for plugin updates
@@ -21,7 +21,7 @@ require("lazy").setup("plugins", {
       disabled_plugins = {
         "gzip",
         "matchit",
-        "matchparen", 
+        "matchparen",
         "netrwPlugin",
         "tarPlugin",
         "tohtml",
@@ -31,5 +31,8 @@ require("lazy").setup("plugins", {
     },
   },
 })
+
+-- Load utility functions
+require('utils').setup()
 EOF
 

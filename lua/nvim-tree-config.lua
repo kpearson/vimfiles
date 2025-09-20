@@ -25,17 +25,10 @@ nvim_tree.setup({
     ignore_list = {},
   },
   
-  -- Show LSP diagnostics in the tree
+  -- Disable LSP diagnostics in the tree to avoid conflicts
+  -- Diagnostics are already shown in the editor via LSP
   diagnostics = {
-    enable = true,
-    show_on_dirs = true,
-    debounce_delay = 50,
-    icons = {
-      hint = "",
-      info = "",
-      warning = "",
-      error = "",
-    },
+    enable = false,
   },
   
   -- Git integration
@@ -207,6 +200,9 @@ nvim_tree.setup({
       watcher = false,
     },
   },
+  
+  -- Attach custom keymaps
+  on_attach = on_attach,
 })
 
 -- Auto-close nvim-tree when it's the last window
@@ -219,11 +215,6 @@ vim.api.nvim_create_autocmd("BufEnter", {
   end
 })
 
--- Keymaps for nvim-tree (additional to plugin keys)
-local function opts(desc)
-  return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
-end
-
 -- Global keymaps (available everywhere)
 vim.keymap.set('n', '<leader>tt', '<cmd>NvimTreeToggle<cr>', { desc = 'Toggle file tree' })
 vim.keymap.set('n', '<leader>tf', '<cmd>NvimTreeFindFile<cr>', { desc = 'Find current file in tree' })
@@ -232,6 +223,10 @@ vim.keymap.set('n', '<leader>tc', '<cmd>NvimTreeCollapse<cr>', { desc = 'Collaps
 -- Function to set up buffer-local keymaps when nvim-tree opens
 local function on_attach(bufnr)
   local api = require "nvim-tree.api"
+  
+  local function opts(desc)
+    return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
+  end
 
   -- Default mappings
   api.config.mappings.default_on_attach(bufnr)
@@ -244,8 +239,3 @@ local function on_attach(bufnr)
   vim.keymap.set('n', 't', api.node.open.tab, opts('Open: New Tab'))
   vim.keymap.set('n', '?', api.tree.toggle_help, opts('Help'))
 end
-
--- Apply the custom keymaps
-require("nvim-tree").setup({
-  on_attach = on_attach,
-})

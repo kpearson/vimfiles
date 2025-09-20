@@ -84,58 +84,58 @@ telescope.setup({
       },
     },
   },
-  
+
   pickers = {
     -- Default configuration for builtin pickers goes here:
     find_files = {
       theme = "dropdown",
-      previewer = false,
+      previewer = true,
       hidden = false,
       find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*" },
     },
-    
+
     live_grep = {
       additional_args = function(opts)
         return {"--hidden"}
       end
     },
-    
+
     grep_string = {
       additional_args = function(opts)
         return {"--hidden"}
       end
     },
-    
+
     buffers = {
       theme = "dropdown",
       previewer = false,
       sort_lastused = true,
       sort_mru = true,
     },
-    
+
     oldfiles = {
       theme = "dropdown",
       previewer = false,
     },
-    
+
     help_tags = {
       theme = "ivy",
     },
-    
+
     -- LSP pickers
     lsp_references = {
       theme = "ivy",
     },
-    
+
     lsp_document_symbols = {
       theme = "dropdown",
     },
-    
+
     lsp_workspace_symbols = {
       theme = "dropdown",
     },
   },
-  
+
   extensions = {
     fzf = {
       fuzzy = true,                    -- false will only do exact matching

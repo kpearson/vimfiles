@@ -28,20 +28,20 @@ return {
     "nvim-telescope/telescope-fzf-native.nvim",
     build = "make",
   },
-  
+
   -- Legacy search tools (disabled)
   {
     "rking/ag.vim",
     enabled = false, -- Replaced by Telescope
   },
   {
-    "kien/ctrlp.vim", 
+    "kien/ctrlp.vim",
     enabled = false, -- Replaced by Telescope
   },
 
   -- ================= Git ==================
   "tpope/vim-fugitive",
-  "tpope/vim-rhubarb", 
+  "tpope/vim-rhubarb",
   "shumphrey/fugitive-gitlab.vim",
   "christoomey/vim-conflicted",
   {
@@ -65,7 +65,7 @@ return {
     end,
     dependencies = { "nvim-tree/nvim-web-devicons" },
   },
-  
+
   -- Legacy status line (disabled)
   {
     "itchyny/lightline.vim",
@@ -150,7 +150,7 @@ return {
     end,
     dependencies = {
       "williamboman/mason.nvim",
-      "williamboman/mason-lspconfig.nvim", 
+      "williamboman/mason-lspconfig.nvim",
       "hrsh7th/cmp-nvim-lsp",
       "b0o/schemastore.nvim",
     },
@@ -161,7 +161,7 @@ return {
     build = ":MasonUpdate",
   },
   "williamboman/mason-lspconfig.nvim",
-  
+
   -- Completion Engine
   {
     "hrsh7th/nvim-cmp",
@@ -171,7 +171,7 @@ return {
     end,
     dependencies = {
       "hrsh7th/cmp-nvim-lsp",
-      "hrsh7th/cmp-buffer", 
+      "hrsh7th/cmp-buffer",
       "hrsh7th/cmp-path",
       "hrsh7th/cmp-cmdline",
       "L3MON4D3/LuaSnip",
@@ -188,7 +188,7 @@ return {
       "rafamadriz/friendly-snippets",
     },
   },
-  
+
   -- LSP Enhancements
   {
     "glepnir/lspsaga.nvim",
@@ -198,10 +198,10 @@ return {
       "nvim-tree/nvim-web-devicons",
     },
   },
-  
+
   -- Legacy CoC (disable for now, keep as fallback)
   {
-    "neoclide/coc.nvim", 
+    "neoclide/coc.nvim",
     branch = "release",
     enabled = false, -- Disabled in favor of native LSP
     event = { "BufReadPre", "BufNewFile" },
@@ -236,23 +236,80 @@ return {
     dependencies = { "nvim-treesitter/nvim-treesitter" },
   },
 
-  -- =========== Buffer Formatting ===========
+  -- =============== Colorscheme ===============  
   {
-    "joshdick/onedark.vim",
-    priority = 1000, -- Load colorschemes early
-  },
-  {
-    "cocopon/iceberg.vim", 
+    "catppuccin/nvim",
+    name = "catppuccin",
     priority = 1000,
-  },
-  {
-    "aonemd/kuroi.vim",
-    priority = 1000,
-  },
-  {
-    "flazz/vim-colorschemes",
-    priority = 1000,
-    lazy = false, -- Keep available for switching
+    lazy = false, -- Load immediately
+    config = function()
+      require("catppuccin").setup({
+        flavour = "mocha", -- latte, frappe, macchiato, mocha
+        background = {
+          light = "latte",
+          dark = "mocha",
+        },
+        transparent_background = false,
+        show_end_of_buffer = false,
+        term_colors = true,
+        dim_inactive = {
+          enabled = false,
+          shade = "dark",
+          percentage = 0.15,
+        },
+        no_italic = false,
+        no_bold = false,
+        no_underline = false,
+        styles = {
+          comments = { "italic" },
+          conditionals = { "italic" },
+          loops = {},
+          functions = {},
+          keywords = {},
+          strings = {},
+          variables = {},
+          numbers = {},
+          booleans = {},
+          properties = {},
+          types = {},
+          operators = {},
+        },
+        color_overrides = {},
+        custom_highlights = {},
+        integrations = {
+          cmp = true,
+          gitsigns = true,
+          nvimtree = true,
+          treesitter = true,
+          telescope = {
+            enabled = true,
+          },
+          lsp_saga = true,
+          mason = true,
+          native_lsp = {
+            enabled = true,
+            virtual_text = {
+              errors = { "italic" },
+              hints = { "italic" },
+              warnings = { "italic" },
+              information = { "italic" },
+            },
+            underlines = {
+              errors = { "underline" },
+              hints = { "underline" },
+              warnings = { "underline" },
+              information = { "underline" },
+            },
+            inlay_hints = {
+              background = true,
+            },
+          },
+          markdown = true,
+          which_key = false,
+        },
+      })
+      vim.cmd.colorscheme("catppuccin")
+    end,
   },
   {
     "godlygeek/tabular",
@@ -263,7 +320,7 @@ return {
     ft = { "markdown" },
     build = "npm install -g livedown",
   },
-  
+
   -- Legacy syntax plugins (disabled in favor of Tree-sitter)
   {
     "sheerun/vim-polyglot",
@@ -303,7 +360,7 @@ return {
   },
   "tpope/vim-bundler",
   {
-    "janko-m/vim-test", 
+    "janko-m/vim-test",
     keys = { "<leader>t" },
     cmd = { "TestNearest", "TestFile", "TestSuite", "TestLast", "TestVisit" },
   },
@@ -331,7 +388,7 @@ return {
     dependencies = {
       {
         "junegunn/fzf",
-        dir = "~/.fzf", 
+        dir = "~/.fzf",
         build = "./install --all",
       },
     },
