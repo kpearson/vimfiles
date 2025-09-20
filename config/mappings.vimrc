@@ -1,7 +1,6 @@
 " _____________________ Mappings _____________________
 " ====================================================
 
-let mapleader = "\<Space>"
 let g:rspec_runner = "os_x_iterm"
 
 " __________ Split navagation __________
