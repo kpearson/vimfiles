@@ -10,6 +10,26 @@ vim.opt.termguicolors = true
 
 local nvim_tree = require('nvim-tree')
 
+-- Function to set up buffer-local keymaps when nvim-tree opens
+local function on_attach(bufnr)
+  local api = require "nvim-tree.api"
+  
+  local function opts(desc)
+    return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
+  end
+
+  -- Default mappings
+  api.config.mappings.default_on_attach(bufnr)
+
+  -- Custom mappings
+  vim.keymap.set('n', 'l', api.node.open.edit, opts('Open'))
+  vim.keymap.set('n', 'h', api.node.navigate.parent_close, opts('Close Directory'))
+  vim.keymap.set('n', 'v', api.node.open.vertical, opts('Open: Vertical Split'))
+  vim.keymap.set('n', 's', api.node.open.horizontal, opts('Open: Horizontal Split'))
+  vim.keymap.set('n', 't', api.node.open.tab, opts('Open: New Tab'))
+  vim.keymap.set('n', '?', api.tree.toggle_help, opts('Help'))
+end
+
 nvim_tree.setup({
   -- Disable startup message
   disable_netrw = true,
@@ -95,6 +115,7 @@ nvim_tree.setup({
         folder = true,
         folder_arrow = true,
         git = true,
+        bookmarks = false,
       },
       glyphs = {
         default = "",
@@ -219,23 +240,3 @@ vim.api.nvim_create_autocmd("BufEnter", {
 vim.keymap.set('n', '<leader>tt', '<cmd>NvimTreeToggle<cr>', { desc = 'Toggle file tree' })
 vim.keymap.set('n', '<leader>tf', '<cmd>NvimTreeFindFile<cr>', { desc = 'Find current file in tree' })
 vim.keymap.set('n', '<leader>tc', '<cmd>NvimTreeCollapse<cr>', { desc = 'Collapse file tree' })
-
--- Function to set up buffer-local keymaps when nvim-tree opens
-local function on_attach(bufnr)
-  local api = require "nvim-tree.api"
-  
-  local function opts(desc)
-    return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
-  end
-
-  -- Default mappings
-  api.config.mappings.default_on_attach(bufnr)
-
-  -- Custom mappings
-  vim.keymap.set('n', 'l', api.node.open.edit, opts('Open'))
-  vim.keymap.set('n', 'h', api.node.navigate.parent_close, opts('Close Directory'))
-  vim.keymap.set('n', 'v', api.node.open.vertical, opts('Open: Vertical Split'))
-  vim.keymap.set('n', 's', api.node.open.horizontal, opts('Open: Horizontal Split'))
-  vim.keymap.set('n', 't', api.node.open.tab, opts('Open: New Tab'))
-  vim.keymap.set('n', '?', api.tree.toggle_help, opts('Help'))
-end
